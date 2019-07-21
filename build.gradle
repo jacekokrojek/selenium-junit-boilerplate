@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id "com.github.ben-manes.versions" version "0.21.0"
+    id "io.qameta.allure" version "2.7.0"
+}
+
+group 'testarmy'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    testCompile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.3.0'
+}
+
+allure {
+    version = '2.7.0'
+    aspectjweaver = true
+    autoconfigure = true
+
+    useJUnit4 {
+        version = '2.0-BETA10'
+    }
+}
+
+
